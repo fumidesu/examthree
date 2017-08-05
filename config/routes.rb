@@ -1,13 +1,26 @@
 Rails.application.routes.draw do
+
+  #get 'relationships/create'
+
+  #get 'relationships/destroy'
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
      omniauth_callbacks: "users/omniauth_callbacks"
    }
-   
-  resources :topics, only: [:index, :new, :create, :edit, :update ,:destroy]
+
 root 'topics#index'
+resources :topics do
+  resources :comments
+  post :confirm, on: :collection
+end
 
+resources :users, only: [:index, :show]
+resources :relationships, only: [:create, :destroy]
 
+resources :conversations do
+  resources :messages
+end
 
 if Rails.env.development?
 mount LetterOpenerWeb::Engine, at: "/letter_opener"
