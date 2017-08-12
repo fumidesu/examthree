@@ -1,3 +1,12 @@
+<div class="d-flex align-items-center text-left h-75 bg-opaque mask mask-faded-out text-white" id="cover">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="display-2">メッセージ一覧</h1>
+          <h5>August 2017, FM, DIVE INTO CODE 大課題３</h5>
+
+
 <% if @over_ten %>
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
@@ -27,7 +36,12 @@
   </div>
     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
   <div>
-    <%= f.submit "メッセージを送る" %>
+      <%= f.submit "メッセージを送る", class: "btn btn-lg mt-4 btn-primary" %>
+    <%#= f.submit "メッセージを送る" %>
   </div>
 
 <% end %>
+  </div>
+    </div>
+      </div>
+  </div>

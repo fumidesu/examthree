@@ -1,16 +1,20 @@
 100.times do |n|
   email = Faker::Internet.email
   password = "password"
-  nutzer = User.create!(email: email,
+  name = Faker::Name.name
+  nutzer = User.create!(name: name,
+               email: email,
                password: password,
                password_confirmation: password,
+               uid: SecureRandom.uuid,
                )
   topic = Topic.create!(title: "AAA",
                content: "BBB",
                user_id: nutzer.id
                )
     2.times do
-      topic.comments.create!(content: "EEEEE")
+      topic.comments.create!(content: "EEEEE",
+                            user_id: nutzer.id)
     end
 end
 # This file should contain all the record creation needed to seed the database with its default values.

@@ -20,3 +20,14 @@ input[type="submit"].btn-block{
   color: white;
   padding-top: 10px;
 }
+
+$theme-colors: (
+  primary: #FF540D,
+  secondary: #222,
+  light: #f3f3f3,
+  dark: #222,
+  info: #17a2b8,
+  success: #28a745,
+  warning: #ffc107,
+  danger: #dc3545
+);
