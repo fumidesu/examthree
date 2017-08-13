@@ -5,7 +5,8 @@
       <div class="function-image">
         <%= profile_img(user) %>
       </div>
-        <%= user.email %>　
+        <%= user.email.truncate(10) %>　
+
 
     <%#= render 'follow_form', user: user %>
     <% if user.id != current_user.id %>
